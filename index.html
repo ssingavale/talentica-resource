@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Talentica Resource | Sourcing Talent, Driving Success</title>
+<meta content="Talentica Resource Pvt. Ltd. — IT &amp; Non-IT permanent and contract staffing across BFSI, NBFC, FinTech, Pharma and more, PAN India." name="description"/>
+<link href="/static/images/logo_icon.png" rel="icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<style>/* ============================================
+   Talentica Resource — Design Tokens
+   ============================================ */
+:root {
+  --navy: #0b2a4a;
+  --navy-deep: #071b30;
+  --blue: #1b5fae;
+  --blue-bright: #2f7fd6;
+  --blue-mist: #eaf1fa;
+  --orange: #f2941c;
+  --orange-soft: #fdece0;
+  --cream: #faf8f4;
+  --ink: #1c2530;
+  --slate: #5c6b7a;
+  --line: #dfe4ea;
+  --white: #ffffff;
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "IBM Plex Sans", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  --max-w: 1160px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 1.5px;
+  background: var(--orange);
+  display: inline-block;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+
+.section-head { max-width: 640px; margin-bottom: 48px; }
+.section-head h2 { font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; }
+.section-head p { color: var(--slate); font-size: 17px; margin-top: 14px; }
+
+section { padding: 96px 0; position: relative; }
+
+/* ============================================
+   Nav
+   ============================================ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(250, 248, 244, 0.86);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+.nav.scrolled { border-color: var(--line); box-shadow: 0 2px 16px rgba(11,42,74,0.05); }
+.nav .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 92px;
+}
+.nav-brand { display: flex; align-items: center; gap: 10px; }
+.nav-brand img { height: 52px; width: auto; }
+.nav-links { display: flex; align-items: center; gap: 36px; }
+.nav-links a {
+  font-size: 14.5px; font-weight: 500; color: var(--navy);
+  position: relative; padding: 4px 0;
+}
+.nav-links a::after {
+  content: ""; position: absolute; bottom: -2px; left: 0; right: 0;
+  height: 2px; background: var(--orange);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .25s ease;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-cta {
+  background: var(--navy); color: var(--white) !important;
+  padding: 10px 20px; border-radius: 3px; font-weight: 600 !important;
+}
+.nav-cta::after { display: none; }
+.nav-toggle { display: none; }
+
+/* ============================================
+   Hero — signature: live sourcing console
+   ============================================ */
+.hero {
+  padding: 168px 0 100px;
+  background: var(--navy);
+  background-image:
+    radial-gradient(circle at 82% 12%, rgba(47,127,214,0.35), transparent 45%),
+    radial-gradient(circle at 8% 85%, rgba(242,148,28,0.14), transparent 40%);
+  color: var(--white);
+  overflow: hidden;
+  position: relative;
+}
+.hero .dotmap {
+  position: absolute; inset: 0; opacity: 0.16; pointer-events: none;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+  position: relative; z-index: 2;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--orange);
+  display: flex; align-items: center; gap: 8px; margin-bottom: 22px;
+}
+.hero h1 {
+  color: var(--white);
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+.hero h1 em {
+  font-style: normal; color: var(--orange);
+}
+.hero p.lead {
+  margin-top: 22px; font-size: 18px; color: #c7d4e3; max-width: 480px;
+}
+.hero-stats {
+  display: flex; gap: 36px; margin-top: 42px;
+}
+.hero-stats div { border-left: 2px solid rgba(255,255,255,0.18); padding-left: 14px; }
+.hero-stats .num {
+  font-family: var(--font-display); font-size: 28px; color: var(--white); font-weight: 600;
+}
+.hero-stats .label {
+  font-size: 12.5px; color: #9fb3c8; margin-top: 2px; font-family: var(--font-mono); letter-spacing: 0.04em;
+}
+
+/* console card */
+.console {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 8px;
+  padding: 22px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+}
+.console-bar {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 16px;
+}
+.console-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.25); }
+.console-title {
+  margin-left: auto; font-family: var(--font-mono); font-size: 11.5px; color: #7f93a8; letter-spacing: 0.06em;
+}
+.console-search {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 5px;
+  padding: 12px 14px;
+  font-family: var(--font-mono);
+  font-size: 14.5px;
+  color: var(--white);
+}
+.console-search .cursor {
+  display: inline-block; width: 7px; height: 15px; background: var(--orange);
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+.console-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.console-tags span {
+  font-family: var(--font-mono); font-size: 12px; color: #cfe0f0;
+  border: 1px solid rgba(255,255,255,0.16);
+  padding: 5px 10px; border-radius: 3px;
+  background: rgba(255,255,255,0.03);
+}
+.console-results { margin-top: 18px; border-top: 1px dashed rgba(255,255,255,0.14); padding-top: 16px; }
+.console-row {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; padding: 8px 0; color: #d8e3ee;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.console-row:last-child { border-bottom: none; }
+.console-row .badge {
+  font-family: var(--font-mono); font-size: 10.5px; color: var(--orange);
+  border: 1px solid rgba(242,148,28,0.4); padding: 2px 7px; border-radius: 20px;
+}
+
+/* ============================================
+   About
+   ============================================ */
+.about .wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: start; }
+.about-quote {
+  font-family: var(--font-display); font-size: 24px; line-height: 1.35;
+  color: var(--navy); font-weight: 500; font-style: italic;
+  border-left: 3px solid var(--orange); padding-left: 24px;
+}
+.about-copy p { color: var(--slate); font-size: 16px; margin-bottom: 16px; }
+.about-copy p:last-child { margin-bottom: 0; }
+.about-copy strong { color: var(--navy); }
+
+.pillars {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 56px;
+}
+.pillar {
+  background: var(--white); padding: 26px 22px;
+}
+.pillar .n { font-family: var(--font-mono); font-size: 12px; color: var(--orange); }
+.pillar h4 { font-size: 16px; margin-top: 10px; color: var(--navy); }
+.pillar p { font-size: 13.5px; color: var(--slate); margin-top: 6px; }
+
+/* ============================================
+   Offerings
+   ============================================ */
+.offerings { background: var(--blue-mist); }
+.offer-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.offer-card {
+  background: var(--white); border: 1px solid var(--line); border-radius: 6px;
+  padding: 30px 26px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.offer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(11,42,74,0.08);
+  border-color: var(--blue-bright);
+}
+.offer-card .idx { font-family: var(--font-mono); font-size: 12px; color: var(--slate); }
+.offer-card h3 { font-size: 19px; margin: 12px 0 10px; color: var(--navy); }
+.offer-card p { font-size: 14.5px; color: var(--slate); }
+
+/* ============================================
+   Verticals / skill sets
+   ============================================ */
+.verticals .wrap { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 60px; }
+.vert-list { display: flex; flex-direction: column; gap: 0; }
+.vert-list .vrow {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 0; border-bottom: 1px solid var(--line);
+  font-family: var(--font-display); font-size: 19px; color: var(--navy);
+}
+.vert-list .vrow span.tag {
+  font-family: var(--font-mono); font-size: 11px; color: var(--orange);
+}
+.skill-cloud { display: flex; flex-wrap: wrap; gap: 10px; align-content: flex-start; }
+.skill-cloud span {
+  font-family: var(--font-mono); font-size: 12.5px; color: var(--navy);
+  border: 1px solid var(--line); background: var(--white);
+  padding: 7px 13px; border-radius: 3px;
+}
+.skill-cloud span.hot { border-color: var(--orange); color: var(--orange); background: var(--orange-soft); }
+
+/* ============================================
+   Process — Agile Recruitment
+   ============================================ */
+.process { background: var(--navy); color: var(--white); }
+.process .section-head h2 { color: var(--white); }
+.process .section-head p { color: #b9c8d9; }
+.process-flow {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+  position: relative; margin-top: 20px;
+}
+.process-flow::before {
+  content: ""; position: absolute; top: 27px; left: 6%; right: 6%; height: 1px;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,0.25) 0 6px, transparent 6px 12px);
+}
+.pstep { position: relative; padding-right: 18px; }
+.pstep .dot {
+  width: 54px; height: 54px; border-radius: 50%;
+  background: var(--navy-deep); border: 2px solid var(--orange);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); color: var(--orange); font-size: 14px;
+  position: relative; z-index: 2;
+}
+.pstep h4 { font-size: 15px; color: var(--white); margin-top: 18px; }
+.pstep .who { font-family: var(--font-mono); font-size: 11px; color: #8ea5bb; margin-top: 4px; }
+.pstep p.desc { font-size: 13px; color: #b9c8d9; margin-top: 8px; }
+
+.process-benefits {
+  margin-top: 64px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px;
+  border-top: 1px solid rgba(255,255,255,0.14); padding-top: 32px;
+}
+.pbenefit { font-size: 13.5px; color: #d8e3ee; display: flex; gap: 10px; align-items: flex-start; }
+.pbenefit::before { content: "→"; color: var(--orange); font-weight: 700; }
+
+/* ============================================
+   Why us / values
+   ============================================ */
+.why .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.why-item h4 { font-size: 17px; color: var(--navy); margin-bottom: 6px; }
+.why-item p { font-size: 13.5px; color: var(--slate); }
+.values-wrap h3 { font-size: 20px; margin-bottom: 18px; }
+.values-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.values-list span {
+  font-family: var(--font-mono); font-size: 12.5px; color: var(--blue);
+  border: 1px solid var(--blue); padding: 8px 14px; border-radius: 20px;
+}
+
+/* ============================================
+   USP strip
+   ============================================ */
+.usp { background: var(--orange-soft); }
+.usp .wrap { text-align: center; }
+.usp .section-head { margin: 0 auto 44px; text-align: center; }
+.usp-row {
+  display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
+}
+.usp-row span {
+  font-family: var(--font-display); font-size: 18px; color: var(--navy);
+  padding: 0 28px; position: relative;
+}
+.usp-row span:not(:last-child)::after {
+  content: "•"; position: absolute; right: -3px; color: var(--orange);
+}
+
+/* ============================================
+   Contact
+   ============================================ */
+.contact { background: var(--navy-deep); color: var(--white); }
+.contact .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.contact .section-head h2 { color: var(--white); }
+.contact .section-head p { color: #a9bbcf; }
+.contact-details { display: flex; flex-direction: column; gap: 20px; margin-top: 8px; }
+.cdetail { display: flex; gap: 16px; align-items: flex-start; }
+.cdetail .k {
+  font-family: var(--font-mono); font-size: 11px; color: var(--orange);
+  text-transform: uppercase; letter-spacing: 0.08em; width: 90px; flex-shrink: 0; margin-top: 4px;
+}
+.cdetail .v { font-size: 16px; color: var(--white); }
+.cdetail .v a:hover { color: var(--orange); }
+.offices { display: flex; gap: 40px; margin-top: 34px; }
+.office { font-family: var(--font-mono); font-size: 12.5px; color: #9fb3c8; }
+.office strong { display: block; color: var(--white); font-size: 15px; font-family: var(--font-display); margin-bottom: 4px; }
+
+.contact-panel {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px; padding: 36px;
+}
+.contact-panel h3 { color: var(--white); font-size: 20px; margin-bottom: 18px; }
+.field { margin-bottom: 16px; }
+.field label {
+  display: block; font-family: var(--font-mono); font-size: 11px; color: #8ea5bb;
+  text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px;
+}
+.field input, .field textarea {
+  width: 100%; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 4px; padding: 11px 12px; color: var(--white); font-family: var(--font-body); font-size: 14px;
+}
+.field input:focus, .field textarea:focus {
+  outline: none; border-color: var(--orange);
+}
+.submit-btn {
+  background: var(--orange); color: var(--navy-deep); border: none; font-weight: 700;
+  padding: 13px 26px; border-radius: 4px; font-size: 14.5px; cursor: pointer;
+  transition: background .2s ease;
+}
+.submit-btn:hover { background: #ffab3d; }
+
+/* ============================================
+   Footer
+   ============================================ */
+footer {
+  background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 28px 0; color: #82970;
+}
+footer .wrap { display: flex; justify-content: space-between; align-items: center; }
+footer p { font-size: 13px; color: #8ea5bb; }
+footer .fbrand { display: flex; align-items: center; gap: 14px; }
+footer .fbrand img {
+  height: 30px;
+  background: var(--cream);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+/* ============================================
+   Utility / focus / motion
+   ============================================ */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--orange); outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 980px) {
+  .hero-grid, .about .wrap, .verticals .wrap, .why .wrap, .contact .wrap { grid-template-columns: 1fr; }
+  .offer-grid { grid-template-columns: repeat(2, 1fr); }
+  .pillars { grid-template-columns: repeat(2, 1fr); }
+  .process-flow { grid-template-columns: repeat(1, 1fr); gap: 32px; }
+  .process-flow::before { display: none; }
+  .process-benefits { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { position: fixed; top: 76px; left: 0; right: 0; bottom: 0; background: var(--cream);
+    flex-direction: column; padding: 32px; gap: 24px; transform: translateX(100%);
+    transition: transform .3s ease; }
+  .nav-links.open { transform: translateX(0); }
+  .nav-toggle { display: block; background: none; border: none; font-size: 24px; cursor: pointer; }
+}
+@media (max-width: 640px) {
+  section { padding: 64px 0; }
+  .hero { padding-top: 132px; }
+  .offer-grid { grid-template-columns: 1fr; }
+  .pillars { grid-template-columns: 1fr; }
+  .usp-row span { padding: 8px 16px; }
+  footer .wrap { flex-direction: column; gap: 10px; text-align: center; }
+  .process-benefits { grid-template-columns: 1fr; }
+}
+</style>
+<style>/* ============================================
+   Talentica Resource — Design Tokens
+   ============================================ */
+:root {
+  --navy: #0b2a4a;
+  --navy-deep: #071b30;
+  --blue: #1b5fae;
+  --blue-bright: #2f7fd6;
+  --blue-mist: #eaf1fa;
+  --orange: #f2941c;
+  --orange-soft: #fdece0;
+  --cream: #faf8f4;
+  --ink: #1c2530;
+  --slate: #5c6b7a;
+  --line: #dfe4ea;
+  --white: #ffffff;
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "IBM Plex Sans", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  --max-w: 1160px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 1.5px;
+  background: var(--orange);
+  display: inline-block;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+
+.section-head { max-width: 640px; margin-bottom: 48px; }
+.section-head h2 { font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; }
+.section-head p { color: var(--slate); font-size: 17px; margin-top: 14px; }
+
+section { padding: 96px 0; position: relative; }
+
+/* ============================================
+   Nav
+   ============================================ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(250, 248, 244, 0.86);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+.nav.scrolled { border-color: var(--line); box-shadow: 0 2px 16px rgba(11,42,74,0.05); }
+.nav .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 92px;
+}
+.nav-brand { display: flex; align-items: center; gap: 10px; }
+.nav-brand img { height: 52px; width: auto; }
+.nav-links { display: flex; align-items: center; gap: 36px; }
+.nav-links a {
+  font-size: 14.5px; font-weight: 500; color: var(--navy);
+  position: relative; padding: 4px 0;
+}
+.nav-links a::after {
+  content: ""; position: absolute; bottom: -2px; left: 0; right: 0;
+  height: 2px; background: var(--orange);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .25s ease;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-cta {
+  background: var(--navy); color: var(--white) !important;
+  padding: 10px 20px; border-radius: 3px; font-weight: 600 !important;
+}
+.nav-cta::after { display: none; }
+.nav-toggle { display: none; }
+
+/* ============================================
+   Hero — signature: live sourcing console
+   ============================================ */
+.hero {
+  padding: 168px 0 100px;
+  background: var(--navy);
+  background-image:
+    radial-gradient(circle at 82% 12%, rgba(47,127,214,0.35), transparent 45%),
+    radial-gradient(circle at 8% 85%, rgba(242,148,28,0.14), transparent 40%);
+  color: var(--white);
+  overflow: hidden;
+  position: relative;
+}
+.hero .dotmap {
+  position: absolute; inset: 0; opacity: 0.16; pointer-events: none;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+  position: relative; z-index: 2;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--orange);
+  display: flex; align-items: center; gap: 8px; margin-bottom: 22px;
+}
+.hero h1 {
+  color: var(--white);
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+.hero h1 em {
+  font-style: normal; color: var(--orange);
+}
+.hero p.lead {
+  margin-top: 22px; font-size: 18px; color: #c7d4e3; max-width: 480px;
+}
+.hero-stats {
+  display: flex; gap: 36px; margin-top: 42px;
+}
+.hero-stats div { border-left: 2px solid rgba(255,255,255,0.18); padding-left: 14px; }
+.hero-stats .num {
+  font-family: var(--font-display); font-size: 28px; color: var(--white); font-weight: 600;
+}
+.hero-stats .label {
+  font-size: 12.5px; color: #9fb3c8; margin-top: 2px; font-family: var(--font-mono); letter-spacing: 0.04em;
+}
+
+/* console card */
+.console {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 8px;
+  padding: 22px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+}
+.console-bar {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 16px;
+}
+.console-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.25); }
+.console-title {
+  margin-left: auto; font-family: var(--font-mono); font-size: 11.5px; color: #7f93a8; letter-spacing: 0.06em;
+}
+.console-search {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 5px;
+  padding: 12px 14px;
+  font-family: var(--font-mono);
+  font-size: 14.5px;
+  color: var(--white);
+}
+.console-search .cursor {
+  display: inline-block; width: 7px; height: 15px; background: var(--orange);
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+.console-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.console-tags span {
+  font-family: var(--font-mono); font-size: 12px; color: #cfe0f0;
+  border: 1px solid rgba(255,255,255,0.16);
+  padding: 5px 10px; border-radius: 3px;
+  background: rgba(255,255,255,0.03);
+}
+.console-results { margin-top: 18px; border-top: 1px dashed rgba(255,255,255,0.14); padding-top: 16px; }
+.console-row {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; padding: 8px 0; color: #d8e3ee;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.console-row:last-child { border-bottom: none; }
+.console-row .badge {
+  font-family: var(--font-mono); font-size: 10.5px; color: var(--orange);
+  border: 1px solid rgba(242,148,28,0.4); padding: 2px 7px; border-radius: 20px;
+}
+
+/* ============================================
+   About
+   ============================================ */
+.about .wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: start; }
+.about-quote {
+  font-family: var(--font-display); font-size: 24px; line-height: 1.35;
+  color: var(--navy); font-weight: 500; font-style: italic;
+  border-left: 3px solid var(--orange); padding-left: 24px;
+}
+.about-copy p { color: var(--slate); font-size: 16px; margin-bottom: 16px; }
+.about-copy p:last-child { margin-bottom: 0; }
+.about-copy strong { color: var(--navy); }
+
+.pillars {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 56px;
+}
+.pillar {
+  background: var(--white); padding: 26px 22px;
+}
+.pillar .n { font-family: var(--font-mono); font-size: 12px; color: var(--orange); }
+.pillar h4 { font-size: 16px; margin-top: 10px; color: var(--navy); }
+.pillar p { font-size: 13.5px; color: var(--slate); margin-top: 6px; }
+
+/* ============================================
+   Offerings
+   ============================================ */
+.offerings { background: var(--blue-mist); }
+.offer-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.offer-card {
+  background: var(--white); border: 1px solid var(--line); border-radius: 6px;
+  padding: 30px 26px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.offer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(11,42,74,0.08);
+  border-color: var(--blue-bright);
+}
+.offer-card .idx { font-family: var(--font-mono); font-size: 12px; color: var(--slate); }
+.offer-card h3 { font-size: 19px; margin: 12px 0 10px; color: var(--navy); }
+.offer-card p { font-size: 14.5px; color: var(--slate); }
+
+/* ============================================
+   Verticals / skill sets
+   ============================================ */
+.verticals .wrap { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 60px; }
+.vert-list { display: flex; flex-direction: column; gap: 0; }
+.vert-list .vrow {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 0; border-bottom: 1px solid var(--line);
+  font-family: var(--font-display); font-size: 19px; color: var(--navy);
+}
+.vert-list .vrow span.tag {
+  font-family: var(--font-mono); font-size: 11px; color: var(--orange);
+}
+.skill-cloud { display: flex; flex-wrap: wrap; gap: 10px; align-content: flex-start; }
+.skill-cloud span {
+  font-family: var(--font-mono); font-size: 12.5px; color: var(--navy);
+  border: 1px solid var(--line); background: var(--white);
+  padding: 7px 13px; border-radius: 3px;
+}
+.skill-cloud span.hot { border-color: var(--orange); color: var(--orange); background: var(--orange-soft); }
+
+/* ============================================
+   Process — Agile Recruitment
+   ============================================ */
+.process { background: var(--navy); color: var(--white); }
+.process .section-head h2 { color: var(--white); }
+.process .section-head p { color: #b9c8d9; }
+.process-flow {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+  position: relative; margin-top: 20px;
+}
+.process-flow::before {
+  content: ""; position: absolute; top: 27px; left: 6%; right: 6%; height: 1px;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,0.25) 0 6px, transparent 6px 12px);
+}
+.pstep { position: relative; padding-right: 18px; }
+.pstep .dot {
+  width: 54px; height: 54px; border-radius: 50%;
+  background: var(--navy-deep); border: 2px solid var(--orange);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); color: var(--orange); font-size: 14px;
+  position: relative; z-index: 2;
+}
+.pstep h4 { font-size: 15px; color: var(--white); margin-top: 18px; }
+.pstep .who { font-family: var(--font-mono); font-size: 11px; color: #8ea5bb; margin-top: 4px; }
+.pstep p.desc { font-size: 13px; color: #b9c8d9; margin-top: 8px; }
+
+.process-benefits {
+  margin-top: 64px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px;
+  border-top: 1px solid rgba(255,255,255,0.14); padding-top: 32px;
+}
+.pbenefit { font-size: 13.5px; color: #d8e3ee; display: flex; gap: 10px; align-items: flex-start; }
+.pbenefit::before { content: "→"; color: var(--orange); font-weight: 700; }
+
+/* ============================================
+   Why us / values
+   ============================================ */
+.why .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.why-item h4 { font-size: 17px; color: var(--navy); margin-bottom: 6px; }
+.why-item p { font-size: 13.5px; color: var(--slate); }
+.values-wrap h3 { font-size: 20px; margin-bottom: 18px; }
+.values-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.values-list span {
+  font-family: var(--font-mono); font-size: 12.5px; color: var(--blue);
+  border: 1px solid var(--blue); padding: 8px 14px; border-radius: 20px;
+}
+
+/* ============================================
+   USP strip
+   ============================================ */
+.usp { background: var(--orange-soft); }
+.usp .wrap { text-align: center; }
+.usp .section-head { margin: 0 auto 44px; text-align: center; }
+.usp-row {
+  display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
+}
+.usp-row span {
+  font-family: var(--font-display); font-size: 18px; color: var(--navy);
+  padding: 0 28px; position: relative;
+}
+.usp-row span:not(:last-child)::after {
+  content: "•"; position: absolute; right: -3px; color: var(--orange);
+}
+
+/* ============================================
+   Contact
+   ============================================ */
+.contact { background: var(--navy-deep); color: var(--white); }
+.contact .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.contact .section-head h2 { color: var(--white); }
+.contact .section-head p { color: #a9bbcf; }
+.contact-details { display: flex; flex-direction: column; gap: 20px; margin-top: 8px; }
+.cdetail { display: flex; gap: 16px; align-items: flex-start; }
+.cdetail .k {
+  font-family: var(--font-mono); font-size: 11px; color: var(--orange);
+  text-transform: uppercase; letter-spacing: 0.08em; width: 90px; flex-shrink: 0; margin-top: 4px;
+}
+.cdetail .v { font-size: 16px; color: var(--white); }
+.cdetail .v a:hover { color: var(--orange); }
+.offices { display: flex; gap: 40px; margin-top: 34px; }
+.office { font-family: var(--font-mono); font-size: 12.5px; color: #9fb3c8; }
+.office strong { display: block; color: var(--white); font-size: 15px; font-family: var(--font-display); margin-bottom: 4px; }
+
+.contact-panel {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px; padding: 36px;
+}
+.contact-panel h3 { color: var(--white); font-size: 20px; margin-bottom: 18px; }
+.field { margin-bottom: 16px; }
+.field label {
+  display: block; font-family: var(--font-mono); font-size: 11px; color: #8ea5bb;
+  text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px;
+}
+.field input, .field textarea {
+  width: 100%; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 4px; padding: 11px 12px; color: var(--white); font-family: var(--font-body); font-size: 14px;
+}
+.field input:focus, .field textarea:focus {
+  outline: none; border-color: var(--orange);
+}
+.submit-btn {
+  background: var(--orange); color: var(--navy-deep); border: none; font-weight: 700;
+  padding: 13px 26px; border-radius: 4px; font-size: 14.5px; cursor: pointer;
+  transition: background .2s ease;
+}
+.submit-btn:hover { background: #ffab3d; }
+
+/* ============================================
+   Footer
+   ============================================ */
+footer {
+  background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 28px 0; color: #82970;
+}
+footer .wrap { display: flex; justify-content: space-between; align-items: center; }
+footer p { font-size: 13px; color: #8ea5bb; }
+footer .fbrand { display: flex; align-items: center; gap: 14px; }
+footer .fbrand img {
+  height: 30px;
+  background: var(--cream);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+/* ============================================
+   Utility / focus / motion
+   ============================================ */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--orange); outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 980px) {
+  .hero-grid, .about .wrap, .verticals .wrap, .why .wrap, .contact .wrap { grid-template-columns: 1fr; }
+  .offer-grid { grid-template-columns: repeat(2, 1fr); }
+  .pillars { grid-template-columns: repeat(2, 1fr); }
+  .process-flow { grid-template-columns: repeat(1, 1fr); gap: 32px; }
+  .process-flow::before { display: none; }
+  .process-benefits { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { position: fixed; top: 76px; left: 0; right: 0; bottom: 0; background: var(--cream);
+    flex-direction: column; padding: 32px; gap: 24px; transform: translateX(100%);
+    transition: transform .3s ease; }
+  .nav-links.open { transform: translateX(0); }
+  .nav-toggle { display: block; background: none; border: none; font-size: 24px; cursor: pointer; }
+}
+@media (max-width: 640px) {
+  section { padding: 64px 0; }
+  .hero { padding-top: 132px; }
+  .offer-grid { grid-template-columns: 1fr; }
+  .pillars { grid-template-columns: 1fr; }
+  .usp-row span { padding: 8px 16px; }
+  footer .wrap { flex-direction: column; gap: 10px; text-align: center; }
+  .process-benefits { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+<div class="wrap">
+<a class="nav-brand" href="#top">
+<img alt="Talentica Resource logo" src="/static/images/logo_wide.png"/>
+</a>
+<div class="nav-links" id="navLinks">
+<a href="#about">About</a>
+<a href="#offerings">Offerings</a>
+<a href="#verticals">Verticals</a>
+<a href="#process">Process</a>
+<a href="#why">Why Us</a>
+<a class="nav-cta" href="#contact">Talk to Us</a>
+</div>
+<button aria-label="Toggle menu" class="nav-toggle" id="navToggle">☰</button>
+</div>
+</nav>
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+<svg class="dotmap" preserveaspectratio="xMidYMid slice" viewbox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="18" id="dots" patternunits="userSpaceOnUse" width="18">
+<circle cx="1.2" cy="1.2" fill="#ffffff" r="1.2"></circle>
+</pattern>
+</defs>
+<rect fill="url(#dots)" height="500" width="1200"></rect>
+</svg>
+<div class="wrap hero-grid">
+<div>
+<div class="hero-eyebrow">Talentica Resource Pvt. Ltd.</div>
+<h1>Sourcing talent that <em>drives</em> your success.</h1>
+<p class="lead">A human resource consulting firm placing IT &amp; Non-IT professionals — permanent and contract — across BFSI, NBFC, FinTech, Pharma and Start-ups, PAN India.</p>
+<div class="hero-stats">
+<div><div class="num">3+ yrs</div><div class="label">IN OPERATION</div></div>
+<div><div class="num">PAN</div><div class="label">INDIA REACH</div></div>
+<div><div class="num">3 Cs</div><div class="label">CLARITY · COMMUNICATION · CLOSURE</div></div>
+</div>
+</div>
+<div class="console reveal">
+<div class="console-bar">
+<span class="console-dot"></span><span class="console-dot"></span><span class="console-dot"></span>
+<span class="console-title">talenticaresource.com/sourcing</span>
+</div>
+<div class="console-search">
+<span>&gt;</span>
+<span id="typedQuery"></span><span class="cursor"></span>
+</div>
+<div class="console-tags">
+<span>ServiceNow</span><span>Finacle</span><span>QA / Testing</span><span>SAP FICO</span><span>DevOps</span><span>Full Stack</span>
+</div>
+<div class="console-results">
+<div class="console-row"><span>Product Manager — NBFC Lending</span><span class="badge">Pune</span></div>
+<div class="console-row"><span>Data Engineer — FinTech</span><span class="badge">Mumbai</span></div>
+<div class="console-row"><span>ITSM Consultant — BFSI</span><span class="badge">PAN India</span></div>
+</div>
+</div>
+</div>
+</header>
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+<div class="wrap">
+<div>
+<div class="eyebrow">About Us</div>
+<p class="about-quote">“Human capital is the engine that propels organizations to grow, gain competitive advantage and realize profits.”</p>
+</div>
+<div class="about-copy">
+<p>At <strong>Talentica Resource</strong>, we understand that a company's greatest asset is its people. We are a leading human resource consulting firm dedicated to helping businesses unlock their workforce needs, working towards excellence in consulting through customer focus, innovation, trust, accountability and transparency.</p>
+<p>We are a staffing company operating across <strong>IT / Non-IT — Permanent &amp; Contract</strong> roles, with specialised expertise in <strong>Investment Banking, NBFC, BFSI, Information Technology, Pharma, FinTech and Start-ups</strong>, working with organisations across PAN India.</p>
+<p>Our philosophy is simple: put client and people first in everything we do. We believe an organisation's success rests on the strength of its people — and our job is to help you build and manage the best teams, with personalised solutions and service that exceeds expectations.</p>
+</div>
+</div>
+<div class="wrap">
+<div class="pillars reveal">
+<div class="pillar"><div class="n">01</div><h4>Dedicated Sourcing Team</h4><p>Experienced recruiters mapped to your domain.</p></div>
+<div class="pillar"><div class="n">02</div><h4>Tailored Solutions</h4><p>Built around each client's specific hiring needs.</p></div>
+<div class="pillar"><div class="n">03</div><h4>Executive Search</h4><p>Specialised methods for leadership-level roles.</p></div>
+<div class="pillar"><div class="n">04</div><h4>Accountability</h4><p>Clear, constructive communication throughout.</p></div>
+</div>
+</div>
+</section>
+<!-- ============ OFFERINGS ============ -->
+<section class="offerings" id="offerings">
+<div class="wrap">
+<div class="section-head">
+<div class="eyebrow">What We Offer</div>
+<h2>End-to-end staffing, built around how you hire.</h2>
+<p>From a single contract role to a full leadership search, our offerings flex to the shape of your workforce plan.</p>
+</div>
+<div class="offer-grid">
+<div class="offer-card reveal">
+<div class="idx">01</div>
+<h3>Permanent Staffing</h3>
+<p>Recruiting full-time positions through extensive candidate searches to find the right long-term fit for your team.</p>
+</div>
+<div class="offer-card reveal">
+<div class="idx">02</div>
+<h3>Contract-to-Permanent</h3>
+<p>Temporary staffing solutions with the option to convert to permanent hires once expectations are met.</p>
+</div>
+<div class="offer-card reveal">
+<div class="idx">03</div>
+<h3>Contract Staffing</h3>
+<p>Skilled contract workers for defined timeframes or projects, giving you the flexibility to scale as needed.</p>
+</div>
+<div class="offer-card reveal">
+<div class="idx">04</div>
+<h3>Executive Search &amp; Placement</h3>
+<p>Specialised search methods to identify and place top-tier talent in high-level leadership positions.</p>
+</div>
+<div class="offer-card reveal">
+<div class="idx">05</div>
+<h3>On-boarding Support</h3>
+<p>Orientation materials, training resources and paperwork support for a smooth start, every time.</p>
+</div>
+<div class="offer-card reveal">
+<div class="idx">06</div>
+<h3>Pre-Screening</h3>
+<p>Rigorous pre-screening for quicker turnaround, so only relevant candidates reach your desk.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ VERTICALS / SKILLS ============ -->
+<section class="verticals" id="verticals">
+<div class="wrap">
+<div>
+<div class="eyebrow">Verticals</div>
+<h2 style="font-size: clamp(26px,3vw,34px); margin-bottom: 28px;">Domain depth across every skill set we place.</h2>
+<div class="vert-list">
+<div class="vrow">BFSI &amp; Investment Banking <span class="tag">CORE</span></div>
+<div class="vrow">NBFC &amp; Core Banking <span class="tag">CORE</span></div>
+<div class="vrow">FinTech &amp; Start-ups <span class="tag">GROWTH</span></div>
+<div class="vrow">Information Technology <span class="tag">CORE</span></div>
+<div class="vrow">Pharma &amp; Manufacturing <span class="tag">CORE</span></div>
+<div class="vrow">E-commerce &amp; Telecom <span class="tag">GROWTH</span></div>
+</div>
+</div>
+<div>
+<p style="color:var(--slate); margin-bottom: 20px; font-size: 15px;">A sample of the skill-sets our sourcing team places every week:</p>
+<div class="skill-cloud">
+<span class="hot">ServiceNow / ITSM</span>
+<span class="hot">Finacle / LOS / LMS</span>
+<span>Full Stack &amp; Java / J2EE</span>
+<span>.NET / C# / Dynamics</span>
+<span class="hot">QA — Manual &amp; Automation</span>
+<span>ETL — Informatica, Qlik, Tableau</span>
+<span>Oracle DBA / SQL Server</span>
+<span class="hot">SAP — FICO, HCM, ABAP, MM</span>
+<span>Cloud &amp; DevOps</span>
+<span>Data Science &amp; Data Engineering</span>
+<span>UX Design / Android / iOS</span>
+<span>Embedded C / C++ / RPA</span>
+<span>Project &amp; Product Management</span>
+<span>Siebel / PeopleSoft / JD Edwards</span>
+<span>Network &amp; Infrastructure</span>
+<span>and more…</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ PROCESS ============ -->
+<section class="process" id="process">
+<div class="wrap">
+<div class="section-head">
+<div class="eyebrow">Our Process</div>
+<h2>Agile recruitment, closed loop.</h2>
+<p>A five-step cycle that keeps hiring managers and recruiters aligned from requirement to offer.</p>
+</div>
+<div class="process-flow">
+<div class="pstep reveal">
+<div class="dot">01</div>
+<h4>Define Requirements</h4>
+<div class="who">HIRING MANAGER</div>
+<p class="desc">Role scope, must-haves and success criteria are locked in upfront.</p>
+</div>
+<div class="pstep reveal">
+<div class="dot">02</div>
+<h4>Source Candidates</h4>
+<div class="who">SOURCER / RECRUITER</div>
+<p class="desc">Our team mines its network and databases for the closest-fit profiles.</p>
+</div>
+<div class="pstep reveal">
+<div class="dot">03</div>
+<h4>Screen &amp; Schedule</h4>
+<div class="who">RECRUITERS</div>
+<p class="desc">Initial calls and screenings filter for role and culture fit.</p>
+</div>
+<div class="pstep reveal">
+<div class="dot">04</div>
+<h4>Accept Candidate?</h4>
+<div class="who">HIRING MANAGER</div>
+<p class="desc">A clear yes takes the candidate to interview; a no loops back to sourcing.</p>
+</div>
+<div class="pstep reveal">
+<div class="dot">05</div>
+<h4>Start Interview Process</h4>
+<div class="who">CLIENT TEAM</div>
+<p class="desc">Candidate moves into your interview pipeline, closure-ready.</p>
+</div>
+</div>
+<div class="process-benefits">
+<div class="pbenefit">Reduces time-to-hire</div>
+<div class="pbenefit">Less cost to land talent</div>
+<div class="pbenefit">Keeps teams focused</div>
+<div class="pbenefit">Improves collaboration</div>
+<div class="pbenefit">Helps avoid bad hires</div>
+</div>
+</div>
+</section>
+<!-- ============ WHY US / VALUES ============ -->
+<section class="why" id="why">
+<div class="wrap">
+<div>
+<div class="eyebrow">Why Choose Us</div>
+<h2 style="font-size: clamp(26px,3vw,34px); margin-bottom:28px;">Five reasons clients stay with us.</h2>
+<div class="why-grid">
+<div class="why-item"><h4>Customer Focus</h4><p>Every engagement starts with your hiring goals, not our pipeline.</p></div>
+<div class="why-item"><h4>Accountability</h4><p>We own outcomes end-to-end, from brief to offer acceptance.</p></div>
+<div class="why-item"><h4>Transparency</h4><p>Clear, constructive communication at every stage of search.</p></div>
+<div class="why-item"><h4>Quality Work</h4><p>Pre-screened, domain-fit candidates — not just resumes in volume.</p></div>
+</div>
+</div>
+<div class="values-wrap">
+<h3>Our Core Values</h3>
+<div class="values-list">
+<span>Customer Focus</span>
+<span>Accountability</span>
+<span>Responsive</span>
+<span>Transparency</span>
+<span>Trust</span>
+<span>Teamwork</span>
+<span>Respect</span>
+<span>Ethics</span>
+</div>
+<h3 style="margin-top:36px;">USP</h3>
+<div class="values-list">
+<span>Tailored Solutions</span>
+<span>Client-Centric</span>
+<span>Experienced Team</span>
+<span>Strong Relationships</span>
+<span>Compliance Expertise</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+<div class="wrap">
+<div>
+<div class="eyebrow">Get In Touch</div>
+<h2>Let's find your next hire.</h2>
+<p>Tell us the role, the domain, and the timeline — our sourcing team takes it from there.</p>
+<div class="contact-details">
+<div class="cdetail"><div class="k">Email</div><div class="v"><a href="mailto:info@talenticaresource.com">info@talenticaresource.com</a><br/><a href="mailto:hr@talenticaresource.com">hr@talenticaresource.com</a></div></div>
+<div class="cdetail"><div class="k">Phone</div><div class="v"><a href="tel:+919309499180">+91 93094 99180</a>  |  <a href="tel:+917972125353">+91 79721 25353</a></div></div>
+<div class="cdetail"><div class="k">Address</div><div class="v">PCMC, Pune, India 412105</div></div>
+<div class="cdetail"><div class="k">Web</div><div class="v"><a href="https://www.talenticaresource.com" rel="noopener" target="_blank">www.talenticaresource.com</a></div></div>
+</div>
+<div class="offices">
+<div class="office"><strong>Pune</strong>PCMC, Maharashtra</div>
+<div class="office"><strong>Mumbai</strong>Maharashtra</div>
+</div>
+</div>
+<div class="contact-panel reveal">
+<h3>Send us your requirement</h3>
+<form id="contactForm" onsubmit="event.preventDefault(); handleSubmit();">
+<div class="field"><label for="name">Name</label><input id="name" placeholder="Your full name" required="" type="text"/></div>
+<div class="field"><label for="company">Company</label><input id="company" placeholder="Organisation name" type="text"/></div>
+<div class="field"><label for="email">Email</label><input id="email" placeholder="you@company.com" required="" type="email"/></div>
+<div class="field"><label for="msg">Requirement</label><textarea id="msg" placeholder="Role, domain, location, timeline..." rows="4"></textarea></div>
+<button class="submit-btn" type="submit">Submit Requirement</button>
+<p id="formNote" style="margin-top:12px; font-size:13px; color:#9fb3c8;"></p>
+</form>
+</div>
+</div>
+</section>
+<!-- ============ FOOTER ============ -->
+<footer>
+<div class="wrap">
+<div class="fbrand">
+<img alt="Talentica Resource" src="/static/images/logo_wide.png"/>
+<p>© <span id="year"></span> Talentica Resource Pvt. Ltd. All rights reserved.</p>
+</div>
+<p>Sourcing Talent, Driving Success.</p>
+</div>
+</footer>
+<script>// ===== Nav scroll state & mobile toggle =====
+const nav = document.getElementById('nav');
+const navLinks = document.getElementById('navLinks');
+const navToggle = document.getElementById('navToggle');
+
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 12);
+});
+
+navToggle?.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+navLinks?.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// ===== Typed search queries in hero console =====
+const queries = [
+  'Searching NBFC Product Manager, Pune...',
+  'Sourcing SAP FICO Consultant, PAN India...',
+  'Matching ITSM Specialist, Mumbai...',
+  'Finding QA Automation Lead, Contract...'
+];
+const typedEl = document.getElementById('typedQuery');
+let qIndex = 0, charIndex = 0, deleting = false;
+
+function typeLoop() {
+  if (!typedEl) return;
+  const current = queries[qIndex];
+
+  if (!deleting) {
+    charIndex++;
+    typedEl.textContent = current.slice(0, charIndex);
+    if (charIndex === current.length) {
+      deleting = true;
+      setTimeout(typeLoop, 1400);
+      return;
+    }
+  } else {
+    charIndex--;
+    typedEl.textContent = current.slice(0, charIndex);
+    if (charIndex === 0) {
+      deleting = false;
+      qIndex = (qIndex + 1) % queries.length;
+    }
+  }
+  setTimeout(typeLoop, deleting ? 22 : 38);
+}
+typeLoop();
+
+// ===== Scroll reveal =====
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => io.observe(el));
+
+// ===== Footer year =====
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// ===== Contact form (front-end only demo) =====
+function handleSubmit() {
+  const note = document.getElementById('formNote');
+  const name = document.getElementById('name').value.trim();
+  if (!name) return;
+  note.textContent = 'Thanks — we\'ll get back to you shortly. For urgent requirements, call +91 93094 99180.';
+  note.style.color = '#f2941c';
+  document.getElementById('contactForm').reset();
+}
+</script>
+</body>
+</html>
